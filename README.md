@@ -25,20 +25,20 @@ Sistema de monitoreo automático para WAHA (WhatsApp API) en Debian 13. Detecta 
 
 ```bash
 mkdir -p ~/waha-monitor && cd ~/waha-monitor
-
+```
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-
+```
 
 ```bash
 pip install python-dotenv requests
-
+```
 
 ```bash
 touch .env
-
+```
 
 ```bash
 # WAHA Configuration
@@ -56,36 +56,36 @@ SMTP_TO=destinatario@email.com
 
 # Opcional
 DEBUG=false
-
+```
 
 ```bash
 mkdir -p logs
-
+```
 
 ```bash
 source venv/bin/activate
 python waha_monitor.py
-
+```
 
 ```bash
 python waha_monitor.py test-smtp
-
+```
 
 ```bash
 crontab -e
-
+```
 
 ```bash
 */5 * * * * cd /home/tu-usuario/waha-monitor && /home/tu-usuario/waha-monitor/venv/bin/python waha_monitor.py >> /home/tu-usuario/waha-monitor/logs/cron.log 2>&1
-
+```
 
 ```bash
 sudo visudo
-
+```
 
 ```bash
 tu-usuario ALL=(ALL) NOPASSWD: /bin/systemctl restart waha, /bin/systemctl restart waha-docker, /bin/systemctl restart whatsapp-api
-
+```
 
 | Método | Endpoint                  | Descripción                                                     |
 | ------ | ------------------------- | --------------------------------------------------------------- |
@@ -129,11 +129,12 @@ tu-usuario ALL=(ALL) NOPASSWD: /bin/systemctl restart waha, /bin/systemctl resta
 
 ```bash
 sudo systemctl list-units --type=service | grep -i waha
-
+```
 
 ```bash
 curl -H "X-Api-Key: TU_API_KEY" http://localhost:3100/api/sessions
-
+```
 
 ```bash
 sudo -l
+```
