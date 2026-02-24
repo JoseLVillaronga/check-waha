@@ -102,7 +102,7 @@ tu-usuario ALL=(ALL) NOPASSWD: /bin/systemctl restart waha, /bin/systemctl resta
 | `DISCONNECTED`          | Desconectado de WhatsApp      | Enviar alerta por email             |
 | HTTP error / timeout    | WAHA no responde              | Reiniciar servicio systemd + alerta |
 
-
+```bash
 ~/waha-monitor/
 ├── .env                    # Configuración (no versionar)
 ├── waha_monitor.py         # Script principal
@@ -111,7 +111,7 @@ tu-usuario ALL=(ALL) NOPASSWD: /bin/systemctl restart waha, /bin/systemctl resta
 │   ├── waha_monitor_YYYYMMDD.log   # Logs diarios
 │   └── cron.log                      # Output de cron
 └── README.md               # Este archivo
-
+```
 
 | Variable        | Descripción                      | Default                 |
 | --------------- | -------------------------------- | ----------------------- |
